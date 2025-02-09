@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.21.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.10.0"
+  },
+  "name": "majorproject",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000w\u0000a\u0000n\u0000d\u0000e\u0000r\u0000l\u0000u\u0000s\u0000t\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
