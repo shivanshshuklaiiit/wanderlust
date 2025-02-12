@@ -58,6 +58,8 @@ const validateReview = (req,res,next) => {
 };
 
 
+app.use("/listings",listings);
+
 
   //Reviews
   app.post("/listings/:id/reviews", validateReview, wrapAsync(async(req,res)=>{
