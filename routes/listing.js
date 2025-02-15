@@ -65,7 +65,7 @@ router.post("/", wrapAsync(async (req, res,next) => {
   router.put("/:id", wrapAsync(async (req, res) => {
     let { id } = req.params;
     await Listing.findByIdAndUpdate(id, { ...req.body.listing });
-    res.redirect(`/${id}`);
+    res.redirect(`/listings/${id}`);
   }));
   
   //Delete Route
