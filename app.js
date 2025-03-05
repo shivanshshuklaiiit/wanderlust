@@ -50,9 +50,9 @@ const sessionOptions = {
   saveUninitialized: true,
 };
 
-app.get("/",(req,res)=>{
-  res.send("Hi,I'm root !");
-});
+// app.get("/",(req,res)=>{
+//   res.send("Hi,I'm root !");
+// });
 
 
 app.use(session(sessionOptions));
