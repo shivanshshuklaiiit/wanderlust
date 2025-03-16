@@ -45,6 +45,21 @@ app.use(methodOverride("_method"));
 app.engine('ejs',ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
+
+
+
+
+
+// ttl - maximum lieftime of a session in milliseconds by default is 14 days
+
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+  touchAfter: 24*60*60,  //time interval between session updates in seconds
+});
+
 store.on("error", function(e){
   console.log("ERROR IN MONGO SESSION STORE",e);
 });
@@ -60,16 +75,6 @@ const sessionOptions = {
     httpOnly: true,
   },
 };
-// ttl - maximum lieftime of a session in milliseconds by default is 14 days
-
-const store = MongoStore.create({
-  mongoUrl: dbUrl,
-  crypto: {
-    secret: process.env.SECRET,
-  },
-  touchAfter: 24*60*60,  //time interval between session updates in seconds
-});
-
 
 app.use(session(sessionOptions));
 app.use(flash()); //we'll use our routes first.
